@@ -119,8 +119,11 @@ in
 	neofetch
 	unstable.vivaldi
 	unstable.obsidian
+	unstable.qgis
 	anki
 	sticky
+	whatsapp-for-linux
+	kdePackages.kdeconnect-kde
     ];
     shell = pkgs.nushell;
 
@@ -147,6 +150,7 @@ hardware.tuxedo-rs = {
 	mangohud # hud for gaming
 	git
 	gnomeExtensions.pop-shell # to make desktop environement look like pop os
+	gnome.gnome-tweaks
 	tuxedo-rs
 	tailor-gui
   ];
