@@ -123,7 +123,7 @@ in
 	anki
 	sticky
 	whatsapp-for-linux
-	kdePackages.kdeconnect-kde
+	gnomeExtensions.yakuake
     ];
     shell = pkgs.nushell;
 
@@ -132,6 +132,7 @@ in
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.kdeconnect.enable = true;
   # Tuxedo control center
   # hardware.tuxedo-rs = {enable = true; tailor-gui.enable = true; # a rust version of tuxedo control center};
 
