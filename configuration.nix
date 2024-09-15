@@ -117,17 +117,25 @@ in
     packages = with pkgs; [
 	krita
 	neofetch
-	unstable.vivaldi
+	vivaldi
 	unstable.obsidian
 	unstable.qgis
+	unstable.blender
 	anki
 	sticky
 	whatsapp-for-linux
-	gnomeExtensions.yakuake
+	unstable.gnomeExtensions.yakuake
+	gnomeExtensions.force-quit
+	unstable.julia
+	#virtualbox
     ];
     shell = pkgs.nushell;
 
   };
+  # Virtualization -- start
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = ["throgg"];
+  # Virtualization -- end
 
 
   # Install firefox.
@@ -153,6 +161,7 @@ hardware.tuxedo-rs = {
 	gnomeExtensions.pop-shell # to make desktop environement look like pop os
 	gnome.gnome-tweaks
 	tuxedo-rs
+	htop
 	tailor-gui
   ];
   system.stateVersion = "24.05"; 
