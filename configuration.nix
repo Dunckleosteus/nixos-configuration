@@ -121,7 +121,7 @@ in
 	unstable.obsidian
 	unstable.qgis
 	unstable.blender
-	anki
+	unstable.anki
 	sticky
 	whatsapp-for-linux
 	unstable.gnomeExtensions.yakuake
