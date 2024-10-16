@@ -194,6 +194,7 @@ hardware.tuxedo-rs = {
 	gnome.gnome-tweaks
 	tuxedo-rs
 	htop
+        xclip # can interact with therm
 	tailor-gui
   ];
   system.stateVersion = "24.05"; 
