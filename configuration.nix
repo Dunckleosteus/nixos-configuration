@@ -25,9 +25,9 @@ in
 			wrap = false;
 		};
 		plugins = {
+                  lightline.enable = true;
+                  lualine.enable = true;
 		  nix.enable = true;
-		  neogit.enable = true;
-		  treesitter.enable = true;
 
 		  lsp = {
 		    enable = true;
@@ -44,6 +44,11 @@ in
                         };
 		      };
 		  };
+                  # enabling autocompletion
+                  cmp = {
+                    enable = true;
+                    autoEnableSources = true;
+                  };
 		};
 	};
     	# nixvim -- end 
