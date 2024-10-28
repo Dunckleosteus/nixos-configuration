@@ -99,7 +99,6 @@ in {
     persistencedSha256 = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
   };
   # boot.kernelPackages = unstable.linuxPackages_6_1;
-  boot.kernelPackages = unstable.linuxPackages_6_1_hardened;
 
   networking.hostName = "nixos"; # Define your hostname.
   # GAMING SETTINGS
