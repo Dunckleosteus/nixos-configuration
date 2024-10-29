@@ -90,15 +90,15 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # fixing shutdown error
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "555.58.02";
-    sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
-    sha256_aarch64 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
-    openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
-    settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
-    persistencedSha256 = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
-  };
-  # boot.kernelPackages = unstable.linuxPackages_6_1;
+  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+  #  version = "555.58.02";
+  #  sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
+  #  sha256_aarch64 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
+  #  openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
+  #  settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
+  #  persistencedSha256 = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
+  #};
+  boot.kernelPackages = unstable.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # GAMING SETTINGS
@@ -215,10 +215,10 @@ in {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # unstable.config.allowUnfree = true;
-  hardware.tuxedo-rs = {
-    tailor-gui.enable = true;
-    enable = true;
-  };
+  #hardware.tuxedo-rs = {
+  #  tailor-gui.enable = true;
+  #  enable = true;
+  #};
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     zoxide # replacement for cd
@@ -226,10 +226,10 @@ in {
     git # must have
     gnomeExtensions.pop-shell # to make desktop environement look like pop os
     gnome.gnome-tweaks
-    tuxedo-rs
+    # unstable.tuxedo-rs
     htop
     xclip # can interact with therm
-    tailor-gui
+    unstable.tailor-gui
     nixd # lsp server for nix programming language
     alejandra # formatter for nix code
   ];
