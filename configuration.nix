@@ -125,6 +125,9 @@ in {
       unstable.vscode
       prismlauncher # for minecraft
       lolcat  # for adding colour to console
+      vscode
+      vscode-extensions.vscodevim.vim
+      neovim
       cowsay
       onlyoffice-bin_latest
     ];
