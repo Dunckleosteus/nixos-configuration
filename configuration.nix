@@ -7,27 +7,21 @@
   unstable = import <unstable> {config.allowUnfree = true;};
 in {
   imports = [
-    # tuxedo.module
     ./hardware-configuration.nix
   ];
-  # hardware.tuxedo-control-center.enable = true;
   services.thermald.enable = lib.mkDefault true;
-  # hardware.tuxedo-keyboard.enable = lib.mkDefault true;
-  # nixvim -- end
+  hardware.tuxedo-drivers.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = unstable.linuxPackages_latest;
+  # boot.kernelPackages = unstable.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # GAMING SETTINGS
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  hardware.nvidia.open = true; # open source driver
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.modesetting.enable = true;
 
@@ -113,10 +107,9 @@ in {
     packages = with pkgs; [
       krita # text editing
       neofetch # system information
-      vivaldi # browser
-      unstable.obsidian
-      unstable.qgis
-      unstable.blender
+      unstable.vivaldi # browser
+      obsidian
+      blender
       unstable.anki
       whatsapp-for-linux
       gnomeExtensions.night-light-slider-updated
@@ -124,11 +117,9 @@ in {
       okular # for pdf editing
       unstable.vscode
       prismlauncher # for minecraft
-      lolcat  # for adding colour to console
       vscode
       vscode-extensions.vscodevim.vim
       neovim
-      cowsay
       onlyoffice-bin_latest
     ];
     shell = pkgs.nushell; # setting shell to nu
@@ -140,21 +131,21 @@ in {
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  #hardware.tuxedo-rs = {
-  #  tailor-gui.enable = true;
-  #  enable = true;
-  #};
+  hardware.tuxedo-rs = {
+    tailor-gui.enable = true;
+    enable = true;
+  };
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     zoxide # replacement for cd
     mangohud # hud for gaming
     git # must have
     gnomeExtensions.pop-shell # to make desktop environement look like pop os
-    gnome.gnome-tweaks
+    gnome-tweaks
     htop
     xclip # can interact with therm
     nixd # lsp server for nix programming language
     alejandra # formatter for nix code
   ];
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
